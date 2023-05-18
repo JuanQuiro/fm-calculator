@@ -21,7 +21,7 @@ module.exports = {
     'bg-gray-700',
   ],
   daisyui: {
-    themes: ["emerald",'business'],//, "synthwave", "wireframe"
+    themes: ["emerald",'business',"synthwave"],//, "synthwave", "wireframe"
   },
     plugins: [require("daisyui")],
 }

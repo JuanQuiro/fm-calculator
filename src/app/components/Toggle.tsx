@@ -11,6 +11,7 @@ export default function  Toggle() {
         }`}
         onClick={() => setSelected('light')}
         data-toggle-theme="emerald"
+        data-act-class="ACTIVECLASS"
       />
       <div
         className={`w-12 h-6 rounded-full ${
@@ -18,12 +19,15 @@ export default function  Toggle() {
         } ml-2`}
         onClick={() => setSelected('gray')}
         data-toggle-theme="business"
+        data-act-class="ACTIVECLASS"
       />
       <div
         className={`w-12 h-6 rounded-full ${
           selected === 'retro' ? 'bg-purple-800' : 'bg-gray-300'
         } ml-2`}
         onClick={() => setSelected('retro')}
+        data-toggle-theme="synthwave"
+        data-act-class="ACTIVECLASS"
       />
     </div>
   );

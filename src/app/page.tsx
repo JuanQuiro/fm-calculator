@@ -1,10 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Toggle from "./components/Toggle";
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
+
+
 
 
 const Calculator: React.FC = () => {
   const [value, setValue] = useState("");
+
+  useEffect(() => {
+  themeChange(false)
+  // 👆 false parameter is required for react project
+}, [])
 
   const handleButtonPress = (buttonValue: string) => {
     setValue(value + buttonValue);
@@ -38,7 +47,7 @@ const Calculator: React.FC = () => {
 
   return (
     <div className="flex justify-center bg-base-300/50 items-center h-screen">
-      <div>
+      <div className="m-2">
 
       <div className="flex justify-between">
         <h2 className="text-xl">calc</h2>
@@ -48,15 +57,15 @@ const Calculator: React.FC = () => {
                   </div>
       </div>
         <input
-          className="bg-base-100 border rounded-lg px-4 py-5 my-2 mb-4 w-full text-right"
+          className="text-3xl font-semibold bg-base-100 border rounded-lg px-4 py-5 my-2 mb-4 w-full text-right"
           type="text"
           value={value}
           readOnly
         />
-      <div className="bg-base-300 rounded-lg p-4">
+      <div className="bg-base-content/25 rounded-lg p-4">
         <div className="grid grid-cols-4 gap-4">
           <button
-            className="bg-gray-200 hover:bg-base-100 sombra text-gray-700 font-bold py-2 px-4 rounded-lg"
+            className="bg-gray-200  hover:bg-base-100 sombra text-gray-700 font-bold py-2 px-4 rounded-lg"
             onClick={() => handleButtonPress("7")}
           >
             7
@@ -74,7 +83,7 @@ const Calculator: React.FC = () => {
             9
           </button>
           <button
-            className=" text-base-100 shadow-black/70 sombra bg-primary hover:bg-primary-focus font-bold py-2 px-4 rounded-lg"
+            className=" text-base-100 shadow-black/70 sombra bg-secondary hover:bg-secondary-focus font-bold py-2 px-4 rounded-lg"
             onClick={handleDeleteButtonPress}
           >
             DEL
@@ -154,7 +163,7 @@ const Calculator: React.FC = () => {
             x
           </button>
           <button
-            className="btn bg-primary  sombra shadow-black/70 hover:bg-primary-focus text-base-100 font-bold py-2 px-4 rounded-lg col-span-2"
+            className="btn bg-secondary hover:bg-secondary-focus sombra shadow-black/70  text-base-100 font-bold py-2 px-4 rounded-lg col-span-2"
             onClick={handleClearButtonPress}
           >
             Reset

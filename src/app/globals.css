@@ -6,11 +6,5 @@
   .sombra {
     @apply shadow-[0px_3px_0px_0px_rgba(109,40,217)] shadow-black/50 hover:shadow-black transition duration-700;
   }
-  .select2-search {
-    @apply border border-gray-300 rounded;
-  }
-  .select2-results__group {
-    @apply text-lg font-bold text-gray-900;
-  }
-  /* ... */
 }
+
